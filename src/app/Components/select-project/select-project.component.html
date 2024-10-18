@@ -1,0 +1,54 @@
+
+<app-progress-bar></app-progress-bar>
+<div class="project-main">
+    <div class="request-header">
+        <div>
+            <img src="assets/user-regular.svg" alt="">
+        </div>
+        <h2>Choosing Project</h2>
+    </div>
+    @if (availableProjects) {
+        <div class="request-info">You have {{availableProjects.length}} projects
+             to choose one from to complete license request</div>
+    }
+    @else {
+        <div class="request-info">You have no projects, please create one</div>
+    }
+    <table>
+        <thead>
+            <th>Project Number</th>
+            <th>Project Name</th>
+            <th>Project Type</th>
+            <th>Project Status</th>
+        </thead>
+        <tbody>
+            
+                @for (prj of availableProjects; track $index) {
+                    <tr (click)="onSelectProject(prj)" [class.active]="prj===selectedProject">
+                        <td>{{ prj.projectId }}</td>
+                        <td>{{ prj.projectName }}</td>
+                        <td>{{ prj.projectType }}</td>
+                        <td>{{ prj.projectStatus }}</td>
+                    </tr>
+                }
+           
+        </tbody>
+    </table>
+    <!-- Errors -->
+    @if (!selectedProject) {
+        <div class="errors">
+            <img src="assets/warning.svg" alt="">
+            <p>Please Choose a Project to Continue</p>
+        </div>
+       
+    }
+    <!-- Control Buttons -->
+    <div class="control-buttons">
+       <a routerLink="/ticket"><input type="button" value="Cancel" id="cancel" (click)="onCancel()"></a> 
+       <a routerLink='/excavation-data'><input type="button" 
+        value="Next" id="confirm" [disabled]="!selectedProject.projectId" (click)="onSubmit()"></a> 
+    </div>
+
+</div>
+
+

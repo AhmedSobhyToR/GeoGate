@@ -1,0 +1,63 @@
+<div>
+    @if (getUserRole === 'user') {
+            <a routerLink="/select-project"><input type="button" value="New Request" (click)="createPermitRequest()"></a>
+        }
+<table>
+    <thead>
+        <th>Request ID</th>
+        <th>Project ID</th>
+        <th>Project Name</th>
+        <th>Excavation Duration</th>
+        <th>Excavation Location</th>
+        <th>Excavation Price</th>
+        <th>Request Date</th>
+        <th>Request Status</th>
+    </thead>
+    <tbody>
+        @if (getUserRole === 'user') {
+            @if (getUserPermits.length >0) {
+                @for (permit of getUserPermits; track $index) {
+                    <tr (click)="viewPermit(permit.id)">
+                        <td>{{permit.id}}</td>
+                        <td>{{permit.project.projectId}}</td>
+                        <td>{{permit.project.projectName}}</td>
+                        <td>{{permit.excavation.excavationDuration}} Days</td>
+                        <td>{{getDetailedLocation(permit)}}</td>
+                        <td>{{permit.excavation.price}} $</td>
+                        <td>{{permit.date}}</td>
+                        <td>{{permit.status}}</td>
+                    </tr>
+                }
+          
+            }
+            @else {
+                    <td colspan="8" class="no-data">You have not created any license requests</td>
+     
+                    }
+        }
+
+        @else if (getUserRole === 'admin'){
+                @if (getAllPermits.length >0) {
+                @for (permit of getAllPermits; track $index) {
+                    <tr (click)="viewPermit(permit.id)">
+                        <td>{{permit.id}}</td>
+                        <td>{{permit.project.projectId}}</td>
+                        <td>{{permit.project.projectName}}</td>
+                        <td>{{permit.excavation.excavationDuration}} Days</td>
+                        <td>{{getDetailedLocation(permit)}}</td>
+                        <td>{{permit.excavation.price}} $</td>
+                        <td>{{permit.date}}</td>
+                        <td>{{permit.status}}</td>
+                    </tr>
+                }
+          
+            }
+            @else {
+                <td colspan="8" class="no-data">There are no license requests to be reviewed</td>
+
+            }
+
+        }
+      
+    </tbody>
+</table>

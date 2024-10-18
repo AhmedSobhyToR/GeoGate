@@ -1,0 +1,31 @@
+dialog{
+    width: 500px;
+    height: 300px;
+    background-color: rgb(58, 58, 58);
+    color: white;
+    border: none;
+    border-radius: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden;
+    margin: 0 auto;
+    top: 15rem;
+    text-align: center;
+}
+dialog p{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input[type='button']{
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+}

@@ -1,0 +1,50 @@
+nav{
+    background-color: rgb(58, 58, 58);
+    /* background-color: transparent; */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 2.5rem;
+    position: fixed; 
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+}
+#logo{
+    height: 70px;
+    width: 250px;
+    cursor: pointer;
+}
+.user-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-image: linear-gradient(to right, rgba(24, 24, 24, 0.762),rgba(24, 24, 24, 0.762));
+    border-radius: 0.7rem;
+}
+.user-info img{
+    width: 18px; 
+}
+
+.user-info-left{
+    width: 40px;
+    height: 40px;
+    background-color:grey;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+}
+
+.user-info-right div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

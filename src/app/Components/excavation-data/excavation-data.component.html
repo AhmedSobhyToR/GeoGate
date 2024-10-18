@@ -1,0 +1,149 @@
+<app-progress-bar></app-progress-bar>
+<div class="excavation-data-main">
+    <div class="excavation-header">
+        <div>
+            <img src="assets/excavation.svg" alt="">
+        </div>
+        <h2>Excavation Data</h2>
+    </div>
+
+    <div class="errors">
+        @if (!excavationDataForm.valid) {
+            <img src="assets/warning.svg" alt="error">
+            <small>Please Fill All Required Fields</small>
+        }
+    </div>
+
+
+        <form [formGroup]="excavationDataForm" id="excavationForm">
+        <div class="form-content">
+        <div >
+            <div class="row">
+                <div class="form-input">
+                    <label >Excavation Method <span class="required">*</span> </label>
+                    <select name="excavationMethod"
+                     formControlName="excavationMethod" [class.requiredInput]="excavationMethod?.errors&&excavationMethod?.touched">
+                        @for (method of excavationMethods; track $index) {
+                            <option [value]=method>{{method}}</option>
+                        }   
+                    </select>
+                </div>
+        
+                <div class="form-input">
+                    <label>Excavation Type <span class="required">*</span> </label>
+                    <select name="excavationType"
+                     formControlName="excavationType" [class.requiredInput]="excavationType?.errors&&excavationType?.touched">
+                     @for (type of excavationTypes; track $index) {
+                        <option [value]=type>{{type}}</option>
+                    } 
+                    </select>
+                </div>
+        
+                <div class="form-input">
+                    <label >Excavation Duration <span class="required">*</span> </label>
+                    <input type="text" name="excavationDuration" 
+                    formControlName="excavationDuration" [class.requiredInput]="excavationDuration?.errors&&excavationDuration?.touched">
+                    <div class="errors">
+                        <!-- <p>{{excavationDuration?.errors|json}}</p> -->
+                        @if (excavationDuration?.errors && excavationDuration?.touched) {
+                            @if (excavationDuration?.errors?.['pattern']) {
+                                <div class="error">
+                                    <img src="assets/warning.svg" alt="error">
+                                    <small>Please enter numbers only</small>
+                                </div>
+    
+                            }
+                            @if (excavationDuration?.errors?.['min']) {
+                                <div class="error">
+                                    <img src="assets/warning.svg" alt="error">
+                                    <small>Duration must be at least 1 day</small>
+                                </div>
+    
+                            }
+                            @if (excavationDuration?.errors?.['max']) {
+                                <div class="error">
+                                    <img src="assets/warning.svg" alt="error">
+                                    <small>Duration must not exceed 100 days</small>
+                                </div>
+    
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+    
+            <form formGroupName="excavationLocation" >
+            <div class="row">
+                    <div class="form-input">
+                        <label>Street <span class="required">*</span> </label>
+                        <input type="text" name="street"
+                        formControlName="street" [class.requiredInput]="street?.errors&&street?.touched">
+                    </div>
+                     <div class="form-input">
+                        <label >Area <span class="required">*</span> </label>
+                        <input type="text" name="area" 
+                        formControlName="area" [class.requiredInput]="area?.errors&&area?.touched">
+                        <div class="errors">
+                            @if (area?.errors?.['pattern']) {
+                                <div class="error">
+                                    <img src="assets/warning.svg" alt="error">
+                                    <small>Only Letters are allowed</small>
+                                </div>
+                            }
+                            </div>
+                    </div>
+                    <div class="form-input">
+                        <label>City <span class="required">*</span> </label>
+                        <input type="text" name="city" 
+                        formControlName="city" [class.requiredInput]="city?.errors&&city?.touched">
+                        <div class="errors">
+                        @if (city?.errors?.['pattern']) {
+                            <div class="error">
+                                <img src="assets/warning.svg" alt="error">
+                                <small>Only Letters are allowed</small>
+                            </div>
+                        }
+                        </div>
+    
+                    </div>
+            </div>
+             </form>
+    
+    
+            <div class="row">
+                <div class="form-input">
+                    <label>Excavation Description</label>
+                    <textarea name="excavationDesc" placeholder="Type More Details..."
+                    formControlName="excavationDescription"></textarea>
+                </div>
+            </div>
+    
+        </div>
+        
+        <app-gis id="gis"></app-gis>
+    </div>
+                <div class="control-buttons">
+                    <div class="control-buttons-left">
+                        <a [routerLink]="['/select-project']"><input type="button" value="Prev" id="prev"
+                            (click)="onPrev()"></a>
+                    </div>
+                    <div class="control-buttons-right">
+                       <a routerLink="/ticket"><input type="button" value="Cancel" class="cancel" (click)="onCancel()"></a>   
+                        <a [routerLink]="['/payment']"><input type="submit" value="Next" class="confirm" 
+                            (click)="onSubmit()" [disabled]="!excavationDataForm.valid"></a> 
+                    </div>
+    
+                </div>
+
+     
+          
+        </form>
+
+
+
+   
+
+
+
+</div>
+

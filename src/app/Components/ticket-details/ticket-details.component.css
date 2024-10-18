@@ -1,0 +1,96 @@
+.permit-details{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    background-color: #616161b1;
+    gap: 1rem;
+    min-height: calc(75vh);
+    padding: 3rem;
+    border-radius: 0.7rem;
+}
+.permit-details-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.permit-details-header-right{
+    display: flex;
+    align-self: center;
+    margin: auto 0;
+    align-items: center;
+    gap: 1rem;
+}
+.permit-details-header-right h2{
+    background-image: linear-gradient(to right, rgba(24, 24, 24, 0.762), rgb(53, 0, 169));
+    background-clip: text;
+    color: transparent;
+}
+.permit-details-header-right img{
+    width: 15px;
+}
+.permit-details-header-right div{
+    width: 40px ;
+    height: 40px;;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, rgba(24, 24, 24, 0.762), rgb(53, 0, 169));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.permit-details-header input[type='button']{
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.permit-details-body{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.permit-details-body h2{
+    color: white;
+}
+
+.project-details,
+ .excavation-details{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.row div{
+    background-color: grey;
+    width: 30%;
+    min-height: 60px;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.row label{
+    color: white;
+    /* font-weight: bold; */
+    font-weight: 500;
+}
+.row p{
+   font-weight: 500;
+}
+
+.full-row div{
+    width: 93%;
+}
+.permit-details-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}

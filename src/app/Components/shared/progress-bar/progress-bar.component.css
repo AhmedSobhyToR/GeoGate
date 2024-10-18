@@ -1,0 +1,40 @@
+.progress-bar{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0 3rem 0;
+}
+.progress-bar::before{
+    content: "";
+    position: absolute;
+    width: 73%;
+    height: 6px;
+    /* border-radius: 0.7rem; */
+    background-color: black;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.step{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+.step p{
+    position: absolute;
+    top: 100%;
+    font-weight: bold;
+}
+
+.step img{
+    width: 20px;
+}

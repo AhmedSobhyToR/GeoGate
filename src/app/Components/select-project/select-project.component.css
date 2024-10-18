@@ -1,0 +1,118 @@
+.project-main{
+    background-color: rgba(255, 255, 255, 0.578);
+    padding: 1rem 2rem;
+    border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.request-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.request-header h2{
+    background-image: linear-gradient(to right, rgba(24, 24, 24, 0.762), rgb(53, 0, 169));
+    background-clip: text;
+    color: transparent;
+}
+
+.request-header div{
+    width: 40px ;
+    height: 40px;;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, rgba(24, 24, 24, 0.762), rgb(53, 0, 169));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.request-header img{
+    width: 15px;
+}
+
+.request-info{
+    background-color: rgba(24, 24, 24, 0.762);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 1rem;
+    max-width: 350px;
+    border-radius: 0.7rem;
+}
+
+table{
+    padding: 1rem;
+    border-radius: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.718);
+    box-shadow: -1px 1px 10px 2px rgba(67, 67, 67, 0.499);
+    border-spacing: 0;
+    width: 90%;
+    /* margin: auto; */
+}
+
+thead{
+    background-color: grey;
+    
+}
+
+th,td{
+    text-align: center;
+    padding: 1.5rem;
+}
+
+tr{
+    cursor: pointer;
+}
+
+tr:hover{
+    background-color: rgba(70, 87, 144, 0.699);
+    border: 1px solid black;
+}
+
+
+
+
+.control-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.control-buttons input[type='button']{
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.7rem;
+}
+
+#cancel{
+    color: rgba(24, 24, 24, 0.762);
+    background-color: white;
+    border: 1px solid rgba(24, 24, 24, 0.762);
+
+}
+
+#confirm{
+    background-color: rgba(24, 24, 24, 0.762);
+    color: white;
+    transition: 0.2s ease;
+}
+
+#confirm:hover{
+    background-color: rgba(24, 24, 24, 0.863);
+}
+
+.active{
+    background-color: rgba(24, 24, 24, 0.863);
+    color: white;
+}
+.active:hover{
+    background-color: rgba(24, 24, 24, 0.863);
+    color: white;
+}

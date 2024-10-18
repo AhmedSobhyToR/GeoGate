@@ -1,0 +1,44 @@
+<div class="progress-bar">
+    <div class="step">
+        @if (permitRequestStatus >= 1 && permitRequestStatus<=4 ) {
+            <img src="/assets/check-solid.svg" alt="">
+        }
+        @else {
+            1
+        }
+
+        <p>Choosing Project</p>
+    </div>
+
+    <div class="step">
+        @if (permitRequestStatus <= 4 && permitRequestStatus >=2 ) {
+            <img src="/assets/check-solid.svg" alt="">
+        }
+        @else {
+            2
+        }
+
+        <p>Excavation Data</p>
+    </div>
+
+    <div class="step">
+        @if (permitRequestStatus <= 4 && permitRequestStatus >=3) {
+            <img src="/assets/check-solid.svg" alt="">
+        }
+        @else {
+            3
+        }
+        <p>Payment</p>
+    </div>
+
+    <div class="step">
+        @if (permitRequestStatus === 4) {
+            <img src="/assets/check-solid.svg" alt="">
+        }
+        @else {
+            4
+        }
+        <p>Request Review</p>
+    </div>
+    
+</div>

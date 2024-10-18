@@ -1,0 +1,47 @@
+table{
+    padding: 1rem;
+    border-radius: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.718);
+    box-shadow: -1px 1px 10px 2px rgba(67, 67, 67, 0.499);
+    border-spacing: 0;
+    width: 100%;
+    /* margin: auto; */
+}
+
+thead{
+    background-color: grey;
+    
+}
+
+th,td{
+    text-align: center;
+    padding: 1.5rem;
+}
+
+tr{
+    cursor: pointer;
+}
+
+tr:hover{
+    background-color: rgba(70, 87, 144, 0.699);
+    border: 1px solid black;
+}
+
+input[type='button']{
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.no-data{
+    color: red;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    
+}

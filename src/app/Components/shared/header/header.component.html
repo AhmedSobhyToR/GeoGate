@@ -1,0 +1,23 @@
+<nav>
+    <a (click)="onLogo()" routerLinkActive="router-link-active" ><img src="assets/logo.png" id="logo" alt="logo"></a>
+    @if (isUserLogged) {
+    <div class="user-info">
+        <div class="user-info-left">
+            <img src="assets/user-regular.svg" alt="">
+        </div>
+
+            <div class="user-info-right" >
+                <p>{{getUserDetails.name}}</p>
+                <div *ngIf="getUserRole === 'user'">
+                    <span>{{getUserDetails.balance}}$</span>
+                    <img src="assets/chevron-down-solid.svg" alt="">
+                </div>
+
+            </div>
+            <div class="control-buttons">
+                <input type="button" value="LogOut" class="cancel" (click)="logOut()">
+            </div>
+     </div>
+    }
+
+</nav>

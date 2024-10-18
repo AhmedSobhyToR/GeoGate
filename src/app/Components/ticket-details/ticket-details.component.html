@@ -1,0 +1,100 @@
+
+<div class="permit-details">
+    <div class="permit-details-header">
+        <div class="permit-details-header-right">
+            <div>
+                <img src="assets/credit-card-solid.svg" alt="Invoice">
+            </div>
+            <h2>License Request Details</h2>
+        </div>
+        <div class="permit-details-buttons">
+            <input type="button" value="Back" (click)="goBack()">
+            @if (getUserRole === 'admin') {
+                <div class="control-buttons" *ngIf="!isRequestMade">
+                    <input type="button" value="Reject" class="cancel" (click)="rejectRequest()">
+                    <input type="button" value="Accept" class="confirm" (click)="acceptRequest()">
+                </div>
+            }
+        </div>
+
+
+    </div>
+    <div class="permit-details-body">
+
+        <div class="project-details">
+            <h2>Project Details</h2>
+            <div class="row">
+                <div>
+                    <label>Request Status</label>
+                    <p>{{permit.status}}</p>
+                </div>
+                <div>
+                    <label>Request ID</label> 
+                    <p>{{permit.id}}</p>
+                </div>
+                
+                <div> 
+                    <label>Project ID</label>
+                    <p>{{permit.project.projectId}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label>Project Name</label>
+                     <p>{{permit.project.projectName}}</p>
+                </div>
+
+                <div>
+                    <label>Project Type</label> 
+                    <p>{{permit.project.projectType}}</p>
+                </div>
+
+                <div>
+                    <label>Project Status</label>
+                    <p>{{permit.project.projectStatus}}</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="excavation-details">
+            <h2>Excavation Details</h2>
+            <div class="row">
+                <div>
+                    <label>Excavation Method</label>
+                    <p>{{permit.excavation.excavationMethod}}</p>
+                </div>
+                <div>
+                    <label>Excavation Type</label>
+                     <p>{{permit.excavation.excavationType}}</p>
+                </div>
+                <div>
+                    <label>Excavation Duration</label>
+                    <p>{{permit.excavation.excavationDuration}} Days</p>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label>Excavation Location</label>
+                    <p>{{getDetailedLocation()}}</p>
+                </div>
+                <div>
+                    <label>Date</label>
+                    <p>{{permit.date}}</p>
+                </div>
+                <div>
+                    <label>Price</label> 
+                    <p>{{permit.excavation.price}} $</p>
+                </div>
+            </div>
+
+            <div class="row full-row">
+                <div>
+                    <label>Excavation Description</label>
+                    <p>{{permit.excavation.excavationDescription}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

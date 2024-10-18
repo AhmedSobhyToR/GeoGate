@@ -1,0 +1,66 @@
+<app-progress-bar [hidden]="showConfirmation"></app-progress-bar>
+<div class="confirm-pay-bg" *ngIf="showConfirmation" (click)="onCancelPayment()"> </div>
+<dialog class="confirm-pay" *ngIf="showConfirmation">
+    @if (!showFailedPayment) {
+        <h2>Are you sure you want to pay {{getExcavationDetails.price}}$?</h2>
+        <img src="assets/sack-dollar-solid.svg" alt="cash">
+        <div class="control-buttons">
+            <input type="button" value="Cancel" class="cancel" (click)="onCancelPayment()">
+            <a>
+            <input type="submit" value="Confirm" class="confirm" (click)="onConfirmPayment()">
+            </a>
+        </div>
+    }
+    @else {
+        <h2 class="failed-payment">Payment Failed!</h2>
+        <h2>You don't have enough balance to complete this transaction!</h2>
+        <div class="control-buttons">
+            <input type="button" value="Close" class="cancel" (click)="onCancelPayment()">
+        </div>
+    }
+
+</dialog>
+<div class="payment-main">
+    <div class="payment-header">
+        <div>
+            <img src="assets/credit-card-solid.svg" alt="Invoice">
+        </div>
+        <h2>Invoice</h2>
+    </div>
+
+    <div class="errors">
+        <!-- To do if error is found -->
+    </div>
+    <div class="invoice-details"> 
+        <h3>User Details</h3>
+        <div class="invoice-user-details">
+            <p>Name: <span>{{getUserDetails.name}}</span></p>
+            <p>Phone: <span>{{getUserDetails.phone}}</span></p>
+            <p>Balance: <span>{{getUserDetails.balance}}$</span></p>
+        </div>
+        <h3>Request Details</h3>
+        <div class="excavation-invoice-details">
+                <p>Project: <span>{{getProjectDetails.projectName}}</span></p>
+                <p>Date: <span>{{getDate}}</span></p>
+        </div>
+        <h3>Payment Details</h3>
+        <div class="invoice-pay-details">
+            <p>Payment Method: <span>{{getUserDetails.paymentMethod}}</span></p>
+            <p>Cost: <span>{{getExcavationDetails.price}}$</span></p>
+        </div>
+    </div>
+
+    <div class="control-buttons">
+        <div class="control-buttons-left">
+            <a routerLink="/excavation-data"><input type="button" value="Prev" id="prev"(click)="onPrev()" ></a>
+        </div>
+        <div class="control-buttons-right">
+            <a routerLink="/ticket"><input type="button" value="Cancel" class="cancel" (click)="onCancel()"></a>
+
+           <a><input type="submit" value="Next" class="confirm" (click)="onSubmit()"></a> 
+        </div>
+
+
+    </div>
+</div>
+

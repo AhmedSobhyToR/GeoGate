@@ -1,0 +1,131 @@
+.payment-main{
+    background-color: rgba(255, 255, 255, 0.578);
+    padding: 1rem 2rem;
+    border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+
+.payment-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.payment-header h2{
+    background-image: linear-gradient(to right, rgba(24, 24, 24, 0.762), rgb(53, 0, 169));
+    background-clip: text;
+    color: transparent;
+}
+
+.payment-header div{
+    width: 40px ;
+    height: 40px;;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, rgba(24, 24, 24, 0.762), rgb(53, 0, 169));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.payment-header img{
+    width: 15px;
+}
+
+/* Invoice */
+
+.invoice-details{
+    margin: 0 auto;
+    font-size: 1.3rem;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    border: 2px solid white;
+    box-shadow: 1px 1px 3px 1px white, -1px -1px 3px 1px white;
+    border-radius: 0.7rem;
+    min-height: 500px;
+}
+
+.invoice-details h3{
+    background-image: linear-gradient(to right, rgba(24, 24, 24, 0.762), rgb(53, 0, 169));
+    background-clip: text;
+    color: transparent;
+}
+.invoice-details p{
+    font-weight: bold;
+}
+.invoice-details p span{
+    color: rgb(255, 255, 255);
+}
+.excavation-invoice-details{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.invoice-user-details,
+ .excavation-invoice-details,
+  .invoice-pay-details{
+    padding: 0 5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.invoice-user-details p,
+ .excavation-invoice-details p,
+.invoice-pay-details p{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+}
+p span{
+    min-width: 200px;
+    text-align: center;
+
+}
+
+
+/* Confirm Pay */
+.confirm-pay-bg{
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.confirm-pay{
+    width: 500px;
+    height: 300px;
+    background-color: rgb(58, 58, 58);
+    color: white;
+    border: none;
+    border-radius: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden;
+    margin: 0 auto;
+    top: 15rem;
+    text-align: center;
+}
+.confirm-pay img{
+    width: 80px;
+}
+.failed-payment{
+    color: red;
+    
+}
+
